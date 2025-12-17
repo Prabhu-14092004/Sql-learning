@@ -1,0 +1,22 @@
+Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer.
+
+ans:
+SELECT DISTINCT CITY
+FROM STATION
+WHERE ID % 2 = 0;
+
+//We use % 2 because % is the modulus (remainder) operator.
+
+What % 2 means
+
+ID % 2 gives the remainder when ID is divided by 2.
+
+How it helps here
+
+Even numbers → remainder is 0
+
+Example: 4 % 2 = 0, 10 % 2 = 0
+
+Odd numbers → remainder is 1
+
+Example: 5 % 2 = 1, 9 % 2 = 1
