@@ -1,0 +1,31 @@
+Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
+
+shortest city;
+
+SELECT city,length(city) from station order by length(city), city limit 1;
+
+longest city;
+
+SELECT CITY, LENGTH(CITY)
+FROM STATION
+ORDER BY LENGTH(CITY) DESC, CITY
+LIMIT 1;
+
+//We use LIMIT 1 to make sure only one row is returned from the query.
+
+Why it’s needed here
+
+Your query orders the cities by length (and alphabetically for ties).
+After sorting, the first row is the correct answer.
+
+ORDER BY LENGTH(CITY), CITY
+LIMIT 1;
+
+
+//This means:
+
+Sort cities by shortest length first
+
+If lengths are equal, sort alphabetically
+
+Pick the first row only
